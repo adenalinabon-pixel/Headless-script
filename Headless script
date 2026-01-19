@@ -1,0 +1,16 @@
+-- LocalScript
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- 1. Locate the Head
+local head = character:WaitForChild("Head")
+
+-- 2. Apply Transparency to the Head Part
+head.Transparency = 1
+
+-- 3. Hide the Face (Decal)
+-- This ensures eyes/mouth don't float where the head was
+local face = head:FindFirstChild("face")
+if face then
+    face.Transparency = 1
+end
